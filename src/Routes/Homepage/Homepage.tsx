@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Homepage = () => {
     return (
         <View style={styles.main}>
-            <Text>Homepage</Text>
+            <Text onPress={async () => {
+                await AsyncStorage.removeItem('loginStatus')
+            }}>Homepage</Text>
         </View>
     )
 }
